@@ -1,0 +1,6 @@
+
+# Outputs
+outputs/
+**/outputs/
+*.dat
+
