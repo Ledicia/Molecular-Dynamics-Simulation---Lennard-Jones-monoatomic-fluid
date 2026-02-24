@@ -17,3 +17,8 @@ outputs/
 outputs/
 **/outputs/
 *.dat
+
+# Simulation outputs
+outputs/
+**/outputs/
+*.dat
