@@ -4,3 +4,11 @@ outputs/
 **/outputs/
 *.dat
 
+
+# ---- Simulation outputs ----
+outputs/
+**/outputs/
+*.dat
+*.bin
+*.xyz
+*.csv
