@@ -1,0 +1,45 @@
+# =====================================================================
+# Simulation input parameters (Lennard-Jones system, reduced units)
+# =====================================================================
+# This file defines all user-controlled parameters of the simulation.
+# The program reads ONLY the numerical values (second line of each block).
+# Any derived quantities (volume, density, rc, dt^2, etc.) are computed
+# internally by the code and must NOT be specified here.
+#
+# ---------------------------------------------------------------------
+# Block 1: System size and simulation control
+# ---------------------------------------------------------------------
+# k              : number of FCC unit cells per box edge
+# total_steps    : total number of MD integration steps
+# output_interval: number of steps between measurements/output
+# warmup_steps   : number of initial equilibration steps (no production data)
+#
+# NOTE:
+# The total number of particles is N = 4 * k^3 (FCC lattice).
+#
+k   total_steps   output_interval   warmup_steps
+5   500000        100               5000
+
+# ---------------------------------------------------------------------
+# Block 2: Time integration and simulation box
+# ---------------------------------------------------------------------
+# dt        : integration time step
+# L         : box side length (reduced units)
+# rc_over_L : cutoff radius divided by box length (rc / L)
+#
+# CONSTRAINT:
+# rc_over_L (rc / L) must be <= 0.5 to avoid double counting interactions
+# due to periodic boundary conditions.
+#
+dt        L     rc_over_L
+1.d-4    10.0  0.49d0
+
+# ---------------------------------------------------------------------
+# Block 3: Thermodynamic constraint
+# ---------------------------------------------------------------------
+# target_total_energy :
+#   Total energy imposed on the system after initial equilibration.
+#   Velocities are rescaled to match this value.
+#
+target_total_energy
+-555.d00
