@@ -12,3 +12,8 @@ outputs/
 *.bin
 *.xyz
 *.csv
+
+# Simulation outputs
+outputs/
+**/outputs/
+*.dat
